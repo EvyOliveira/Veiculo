@@ -32,3 +32,13 @@ const avengers = [
     "habilidade":["arco e flecha", "porrada"]
   }
 ]
+
+// Quero listar todos os heróis que são homens
+const masculino = avengers.filter(item => item.genero == "H")
+
+console.log(masculino)
+
+// Quero listar todos os nomes de heróis
+const nomes = avengers.map(item => item.nome)
+
+console.log(nomes)
