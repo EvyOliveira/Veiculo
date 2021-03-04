@@ -1,27 +1,45 @@
-console.log("Exemplos de utilização de arrow function");
-
+console.log('Exemplos de utilização de Arrow Function');
 /*
- Eu preciso multiplicar dois valores denominados x e y
- */
+* Criar uma  function que multiplica dois valores x e y
+*/
+function multNormal(x,y){
+    return x * y;
+}
+console.log(' ')
+console.log('multiplicação sem arrow Function:');
+console.log(multNormal(2,3))
+console.log(' ')
 
- function multiplicarNormal(x, y) {
-   return x * y
- }
+var arrowFunctionSemRetorno = (x,y)=> x * y;
 
- console.log(multiplicarNormal(2, 3))
+console.log('multiplicação com arowFunction sem return:')
+console.log(arrowFunctionSemRetorno(2,3));
+console.log(' ')
 
- var arrowFunctionSemRetorno = (x, y ) => x * y;
- console.log(arrowFunctionSemRetorno(2, 3))
+var arrowFunctionComRetorno = (x,y)=>{
+    if (y > x){
+        return x * y;
+    }else{
+        return `${x} é maior que ${y}`
+    }
+}
+console.log('multiplicação com arrowFunction com return :')
+console.log(arrowFunctionComRetorno(2,3),"\n",arrowFunctionComRetorno(3,2));
 
- var arrowFunctionSemRetorno = (x, y) => {
-   if (y > x) {
-     return x * y;
-   } else {
-     return console.log `${x} eh maior que ${y}`
-   }
- }
+var fnSplit = function(frase){
+    return frase.split(' ');
+}
+ 
+var fnSplitAF = frase => frase.split(' ');
 
- console.log(
-   arrowFunctionSemRetorno(2, 3),
-   arrowFunctionSemRetorno(2, 3)
- )
+console.log(fnSplit('Olá estamos no CTT!'))
+console.log('--------------------');
+console.log(fnSplitAF('Olá estamos no CTT!'));
+
+var fnSemParametros = function minhaFunction(){
+    console.log('só uma saída normal!')
+}
+var fnSemParametrosAF = () => console.log('só uma saída normal');
+
+console.log(fnSemParametros())
+console.log(fnSemParametrosAF())
